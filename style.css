@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.nav{
+  background-color: #00998b;
+  width:100%; 
+  position: sticky;
+  /* position: fixed; */
+  top: 0;
+  z-index: 100;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;  */
+}
+
+
+ .nav__input{
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  padding-left: 0.5rem;
+  border-radius: 30px;
+  border: none;
+  width:20rem;
+   /* position:relative;  */
+}
+
+input[type="text"]::placeholder {  
+  padding-left: 1rem; 
+} 
+
+/* .nav_input:hover{
+  width: 30rem;
+}  */
+
+.nav__btn{
+ /* top:1.5rem;
+ right:30rem; 
+ position: absolute;
+ z-index: 200;  */
+ margin-left: -2.5rem; 
+ margin-top: 1.5rem; 
+ cursor: pointer;
+ border:none;
+ background-color: white; 
+}
+
+ .fa-solid{
+font-size: 1rem;
+color:gray;
+} 
+
+
+
+.result{
+  width:80%;
+  /* margin-top: 3rem; */
+} 
+
+.result div{
+  padding: 1rem 0;
+  border-bottom: 1px solid #00998b;
+  font-size: 1.5rem ;
+
+}
+
+
+section{
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  justify-content: center;
+  align-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+ section div {
+  padding: 0.5rem;
+  margin-bottom: 20px;
+  background-color: lightgray; 
+  border: 1px solid #00998b;
+  text-align: center;
+} 
+
+
+
+ @media only screen and (max-width: 768px) {
+  section{
+    display: grid;
+    /* grid-template-columns: 2fr 2fr 2fr; */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  }
+ 
+}  
