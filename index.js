@@ -14,7 +14,6 @@ searchBtn.addEventListener("click", submitSearch);
 
 function submitSearch(e) {
     e.preventDefault();
-    alert("Please fill out this field!")
     const ARTIST_NAME = document.querySelector("#text").value;
     console.log(ARTIST_NAME);
     fetch(
