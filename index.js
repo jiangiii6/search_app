@@ -1,13 +1,14 @@
 const search = document.querySelector("form");
 const searchBtn = document.getElementById("nav__btn");
 
+const detail = document.querySelector(".res__detail");
 const p = document.querySelector("p");
 const section = document.querySelector("section");
 const loader = document.getElementById("loader");
 
 //searchBtn.addEventListener("click", lalala);
 search.addEventListener("submit", submitSearch);
-searchBtn.addEventListener("click", submitSearch);
+
 
 // function lalala(e){
 //     e.alert("hi");
