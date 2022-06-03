@@ -9,7 +9,6 @@ const loader = document.getElementById("loader");
 //searchBtn.addEventListener("click", lalala);
 search.addEventListener("submit", submitSearch);
 
-
 // function lalala(e){
 //     e.alert("hi");
 // }
@@ -21,8 +20,6 @@ search.addEventListener("submit", function(e){
 
 
 function submitSearch(ARTIST_NAME) {
-  const ARTIST_NAME = document.querySelector("#text").value;
-
   fetch(
     `https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=200`
   )
@@ -40,14 +37,14 @@ function show(cards) {
   //console.log(cards);
   // console.log("haha");
 
- if (cards.length === 0) {
+  if (cards.length === 0) {
     p.textContent = "No results.";
   } else {
     p.textContent="";
     loader.style.setProperty('visibility', 'visible');
   }
-  
-   setTimeout(() => {
+
+  setTimeout(() => {
     const ARTIST_NAME = document.querySelector("#text").value;
     loader.style.setProperty('visibility', 'hidden'); 
     // console.log(cards.length);
@@ -72,3 +69,4 @@ function show(cards) {
     }, "1000")
   
   }
+
