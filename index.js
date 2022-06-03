@@ -1,8 +1,9 @@
 const search = document.querySelector("form");
 const searchBtn = document.getElementById("nav__btn");
 
-const detail = document.querySelector(".res__detail");
+const p = document.querySelector("p");
 const section = document.querySelector("section");
+const loader = document.getElementById("loader");
 
 //searchBtn.addEventListener("click", lalala);
 search.addEventListener("submit", submitSearch);
@@ -11,11 +12,14 @@ searchBtn.addEventListener("click", submitSearch);
 // function lalala(e){
 //     e.alert("hi");
 // }
+search.addEventListener("submit", function(e){
+  const input = document.querySelector("#text").value;
+    e.preventDefault();
+      submitSearch(input);
+});
 
-function submitSearch(e) {
 
-  e.preventDefault();
-
+function submitSearch(ARTIST_NAME) {
   const ARTIST_NAME = document.querySelector("#text").value;
 
   fetch(
@@ -35,13 +39,18 @@ function show(cards) {
   //console.log(cards);
   // console.log("haha");
 
-  if (cards.length == 0) {
-    detail.textContent = "No results.";
-    // section.appendChild(detail);
+ if (cards.length === 0) {
+    p.textContent = "No results.";
   } else {
+    p.textContent="";
+    loader.style.setProperty('visibility', 'visible');
+  }
+  
+   setTimeout(() => {
     const ARTIST_NAME = document.querySelector("#text").value;
+    loader.style.setProperty('visibility', 'hidden'); 
     // console.log(cards.length);
-    detail.textContent = `${cards.length} results for "${ARTIST_NAME}"`;
+    p.textContent = `${cards.length} results for "${ARTIST_NAME}"`;
     // for (let i = 0; i < cards; i++) {
     for (const card of cards) {
       //const card = cards[i];
@@ -59,6 +68,6 @@ function show(cards) {
       div.appendChild(name);
       section.appendChild(div);
     }
+    }, "1000")
+  
   }
-}
-
